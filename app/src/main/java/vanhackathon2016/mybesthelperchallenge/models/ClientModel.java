@@ -11,7 +11,7 @@ public class ClientModel implements Serializable {
 
     private String name;
 
-    private Archetype archetypeId;
+    private ArchetypeModel archetypeId;
 
     public int getId() {
         return id;
@@ -29,11 +29,11 @@ public class ClientModel implements Serializable {
         this.name = name;
     }
 
-    public Archetype getArchetypeId() {
+    public ArchetypeModel getArchetypeId() {
         return archetypeId;
     }
 
-    public void setArchetypeId(Archetype archetypeId) {
+    public void setArchetypeId(ArchetypeModel archetypeId) {
         this.archetypeId = archetypeId;
     }
 }
