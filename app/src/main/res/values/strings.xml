@@ -1,3 +1,65 @@
 <resources>
-    <string name="app_name">MyBestHelperChallange</string>
+    <string name="app_name">My Best Helper Challange</string>
+
+    <string name="question_1">What work are you most interested in?</string>
+    <string name="question_2">Do you want to work:</string>
+    <string name="question_3">Which person are you most like?</string>
+    <string name="question_4">Your favorite music is:</string>
+    <string name="question_5">I would be most happy</string>
+    <string name="question_6">The coolest thing in this list is:</string>
+    <string name="question_7">I prefer spending time with people who are:</string>
+    <string name="question_8">I am great at</string>
+    <string name="question_9">I relax by</string>
+    <string name="question_10">When I choose presents for friends</string>
+
+    <string name="answer_1_question_1">Child care</string>
+    <string name="answer_1_question_2">Elder care</string>
+    <string name="answer_1_question_3">Home care</string>
+    <string name="answer_1_question_4">Pet care</string>
+
+    <string name="answer_2_question_1">Full-time</string>
+    <string name="answer_2_question_2">Part-time</string>
+    <string name="answer_2_question_3">Occasional</string>
+    <string name="answer_2_question_4">On-call</string>
+
+    <string name="answer_3_question_1">Gets things done</string>
+    <string name="answer_3_question_2">Always happy</string>
+    <string name="answer_3_question_3">Friendly and fun</string>
+    <string name="answer_3_question_4">Professional</string>
+
+    <string name="answer_4_question_1">Modern pop</string>
+    <string name="answer_4_question_2">Rock and roll</string>
+    <string name="answer_4_question_3">Classic</string>
+    <string name="answer_4_question_4">World music</string>
+
+    <string name="answer_5_question_1">Cooking a meal</string>
+    <string name="answer_5_question_2">Taking a walk</string>
+    <string name="answer_5_question_3">Arts and Crafts</string>
+    <string name="answer_5_question_4">Playing sports</string>
+
+    <string name="answer_6_question_1">Gardening</string>
+    <string name="answer_6_question_2">Play an instrument</string>
+    <string name="answer_6_question_3">Travelling</string>
+    <string name="answer_6_question_4">Seeing a show</string>
+
+    <string name="answer_7_question_1">Easy going</string>
+    <string name="answer_7_question_2">Super smart</string>
+    <string name="answer_7_question_3">Open and direct</string>
+    <string name="answer_7_question_4">Laugh a lot</string>
+
+    <string name="answer_8_question_1">Listening to instructions</string>
+    <string name="answer_8_question_2">Problem solving</string>
+    <string name="answer_8_question_3">Using my experience</string>
+    <string name="answer_8_question_4">Learning from others</string>
+
+    <string name="answer_9_question_1">Reading books</string>
+    <string name="answer_9_question_2">Doing something active</string>
+    <string name="answer_9_question_3">Hanging out with friends</string>
+    <string name="answer_9_question_4">Watching movies</string>
+
+    <string name="answer_10_question_1">Easy - I have lots of ideas</string>
+    <string name="answer_10_question_2">I plan long ahead</string>
+    <string name="answer_10_question_3">I am never sure</string>
+    <string name="answer_10_question_4">I am totally last minute!</string>
+
 </resources>
