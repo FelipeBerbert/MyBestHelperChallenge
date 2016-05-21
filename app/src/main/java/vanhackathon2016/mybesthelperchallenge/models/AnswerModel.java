@@ -5,13 +5,18 @@ import java.io.Serializable;
 /**
  * Created by Angelo on 21/05/2016.
  */
-public class AnswerModel implements Serializable{
+public class AnswerModel implements Serializable {
 
     private int id;
 
     private String text;
 
     private int idQuestion;
+
+    public AnswerModel(int id, String text) {
+        this.id = id;
+        this.text = text;
+    }
 
     public int getId() {
         return id;
