@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
@@ -59,6 +60,10 @@ public class QuestionActivity extends AppCompatActivity {
     List<QuestionModel> questionList;
     List<Button> answerButtonList;
 
+    AnswerModel selectedAnswer;
+
+    TextView tvResult;
+
     @AfterViews
     void init() {
        /* if (Utils.isKitkat())
@@ -85,7 +90,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
 
-    private void resizeSceneArea(){
+    private void resizeSceneArea() {
         LinearLayout.LayoutParams sceneParams = (LinearLayout.LayoutParams) flSceneFrame.getLayoutParams();
         sceneParams.height = flSceneFrame.getWidth();
         flSceneFrame.setLayoutParams(sceneParams);
@@ -104,6 +109,10 @@ public class QuestionActivity extends AppCompatActivity {
         questionProgress++;
         if (Utils.isKitkat()) TransitionManager.beginDelayedTransition(llBody);
 
+        if (tvResult != null)
+            flSceneFrame.removeView(tvResult);
+
+        tvQuestion.setText("");
 
         btNext.setVisibility(View.GONE);
         final QuestionModel question = getQuestionById(questionProgress);
@@ -114,15 +123,15 @@ public class QuestionActivity extends AppCompatActivity {
             public void onGlobalLayout() {
                 ivScene.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 resizeSceneArea();
-                for (int i = 0; i < 4; i ++){
+                for (int i = 0; i < 4; i++) {
                     positionAnswer(answerButtonList.get(i), question.getAnswers().get(i));
                 }
+                tvQuestion.setText(question.getText());
             }
         });
-        tvQuestion.setText(question.getText());
     }
 
-    private void positionAnswer(Button btAnswer, AnswerModel answer){
+    private void positionAnswer(Button btAnswer, AnswerModel answer) {
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) btAnswer.getLayoutParams();
         params.setMargins(utils.getQuadrantBasedX(flSceneFrame, answer.getRelativeCoordinateX()), utils.getQuadrantBasedY(flSceneFrame, answer.getRelativeCoordinateY()), 0, 0);
         params.height = utils.getQuadrantBasedHeight(flSceneFrame, answer.getRelativeSize());
@@ -132,31 +141,48 @@ public class QuestionActivity extends AppCompatActivity {
 
     @Click(R.id.bt_answer1)
     void clickAnswer1() {
-        Toast.makeText(QuestionActivity.this, "hit! answer 1", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "hit! answer 1", Toast.LENGTH_LONG).show();
+        selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(0);
         showResult();
     }
+
     @Click(R.id.bt_answer2)
     void clickAnswer2() {
-        Toast.makeText(QuestionActivity.this, "hit! answer 2", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "hit! answer 2", Toast.LENGTH_LONG).show();
+        selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(1);
         showResult();
     }
+
     @Click(R.id.bt_answer3)
     void clickAnswer3() {
-        Toast.makeText(QuestionActivity.this, "hit! answer 3", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "hit! answer 3", Toast.LENGTH_LONG).show();
+        selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(2);
         showResult();
     }
+
     @Click(R.id.bt_answer4)
     void clickAnswer4() {
-        Toast.makeText(QuestionActivity.this, "hit! answer 4", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "hit! answer 4", Toast.LENGTH_LONG).show();
+        selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(3);
         showResult();
     }
+
     @Click(R.id.bt_next)
-    void clickNext(){
+    void clickNext() {
         callNextQuestion();
     }
 
-    private void showResult(){ // Mostrar botao next e etiqueta com a resposta escolhida.
+    private void showResult() { // Mostrar botao next e etiqueta com a resposta escolhida.
         if (Utils.isKitkat()) TransitionManager.beginDelayedTransition(llBody);
+        if (tvResult != null)
+            flSceneFrame.removeView(tvResult);
+        tvResult = new TextView(this);
+        tvResult.setBackgroundColor(getResources().getColor(R.color.colorRedTranslucent));
+        tvResult.setTextColor(getResources().getColor(android.R.color.white));
+        tvResult.setText(selectedAnswer.getText());
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.setMargins(utils.getQuadrantBasedX(ivScene, selectedAnswer.getRelativeCoordinateX()), utils.getQuadrantBasedY(ivScene, selectedAnswer.getRelativeCoordinateY()), 0, 0);
+        flSceneFrame.addView(tvResult, params);
         btNext.setVisibility(View.VISIBLE);
     }
 

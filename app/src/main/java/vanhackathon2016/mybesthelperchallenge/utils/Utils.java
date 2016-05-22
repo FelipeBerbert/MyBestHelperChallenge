@@ -79,7 +79,7 @@ public class Utils {
                 answers.add(
                         new AnswerModel(1, c.getResources().getString(R.string.answer_1_question_2),
                                 new RelativeCoordinate(22, 36),
-                                new RelativeCoordinate(17, 32), 3));
+                                new RelativeCoordinate(15, 32), 3));
                 answers.add(
                         new AnswerModel(1, c.getResources().getString(R.string.answer_1_question_3),
                                 new RelativeCoordinate(14, 36),
