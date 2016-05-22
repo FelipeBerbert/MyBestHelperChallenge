@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:background="@color/colorRed">
+    android:background="@color/colorGreen">
 
     <TextView
-        android:id="@+id/tv_header_1"
+        android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/header_user_page_name"
+        android:text="@string/header_result_page"
         app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour"
         android:layout_alignParentTop="true"
         android:paddingTop="100dp"
@@ -21,32 +21,21 @@
         android:textColor="@android:color/white"
         android:textSize="30dp"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_user_name"
+    <ImageView
+        android:id="@+id/img_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:textColor="@android:color/white"
-        android:textColorHint="#63FFFFFF"
-        app:errorTextAppearance="@style/error_appearance">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/ed_user_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:hint="Name"
-            android:textColor="@android:color/white"
-            android:backgroundTint="@android:color/white"/>
-    </android.support.design.widget.TextInputLayout>
+        android:scaleType="fitXY"/>
 
     <Button
         style="?attr/borderlessButtonStyle"
-        android:id="@+id/start"
+        android:id="@+id/bt_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="start"
+        android:text="continue"
         android:textColor="@android:color/white"
-        android:layout_below="@id/til_user_name"
+        android:layout_below="@id/img_result"
         android:layout_alignParentRight="true"
         android:paddingTop="70dp"
         android:gravity="right"/>

@@ -13,7 +13,7 @@
         android:id="@+id/tv_header_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/header_user_page_name"
+        android:text="@string/header_user_page_info"
         app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour"
         android:layout_alignParentTop="true"
         android:paddingTop="100dp"
@@ -22,31 +22,55 @@
         android:textSize="30dp"/>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_user_name"
+        android:id="@+id/til_user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textColor="@android:color/white"
-        android:textColorHint="#63FFFFFF"
+        android:textColorHint="#70FFFFFF"
+        app:errorEnabled="true"
         app:errorTextAppearance="@style/error_appearance">
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/ed_user_name"
+            android:id="@+id/ed_user_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:hint="Name"
+            android:hint="E-mail"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/white"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_user_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textColorHint="#70FFFFFF"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/error_appearance"
+        android:layout_below="@id/til_user_email">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ed_user_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:hint="Age"
             android:textColor="@android:color/white"
             android:backgroundTint="@android:color/white"/>
     </android.support.design.widget.TextInputLayout>
 
     <Button
         style="?attr/borderlessButtonStyle"
-        android:id="@+id/start"
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="start"
+        android:text="submit"
         android:textColor="@android:color/white"
-        android:layout_below="@id/til_user_name"
+        android:layout_below="@id/til_user_age"
         android:layout_alignParentRight="true"
         android:paddingTop="70dp"
         android:gravity="right"/>
