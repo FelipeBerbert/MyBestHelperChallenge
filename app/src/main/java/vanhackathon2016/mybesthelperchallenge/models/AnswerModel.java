@@ -17,11 +17,14 @@ public class AnswerModel implements Serializable {
 
     private RelativeCoordinate relativeCoordinateY;
 
-    public AnswerModel(int id, String text, RelativeCoordinate relativeCoordinateX, RelativeCoordinate relativeCoordinateY) {
+    int relativeSize;
+
+    public AnswerModel(int id, String text, RelativeCoordinate relativeCoordinateX, RelativeCoordinate relativeCoordinateY, int relativeSize) {
         this.id = id;
         this.text = text;
         this.relativeCoordinateX = relativeCoordinateX;
         this.relativeCoordinateY = relativeCoordinateY;
+        this.relativeSize = relativeSize;
     }
 
     public int getId() {
@@ -62,5 +65,13 @@ public class AnswerModel implements Serializable {
 
     public void setRelativeCoordinateY(RelativeCoordinate relativeCoordinateY) {
         this.relativeCoordinateY = relativeCoordinateY;
+    }
+
+    public int getRelativeSize() {
+        return relativeSize;
+    }
+
+    public void setRelativeSize(int relativeSize) {
+        this.relativeSize = relativeSize;
     }
 }
