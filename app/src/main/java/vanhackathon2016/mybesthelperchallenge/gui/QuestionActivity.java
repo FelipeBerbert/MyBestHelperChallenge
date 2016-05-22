@@ -78,11 +78,17 @@ public class QuestionActivity extends AppCompatActivity {
         ivScene.post(new Runnable() {
             @Override
             public void run() {
+                animateRevealShow(ivScene);
                 callNextQuestion();
-                //animateRevealShow(ivScene);
             }
         });
 
+    }
+
+    private void resizeSceneArea(){
+        LinearLayout.LayoutParams sceneParams = (LinearLayout.LayoutParams) flSceneFrame.getLayoutParams();
+        sceneParams.height = flSceneFrame.getWidth();
+        flSceneFrame.setLayoutParams(sceneParams);
     }
 
     @Nullable
@@ -107,6 +113,7 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onGlobalLayout() {
                 ivScene.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                resizeSceneArea();
                 for (int i = 0; i < 4; i ++){
                     positionAnswer(answerButtonList.get(i), question.getAnswers().get(i));
                 }
@@ -117,9 +124,9 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void positionAnswer(Button btAnswer, AnswerModel answer){
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) btAnswer.getLayoutParams();
-        params.setMargins(utils.getQuadrantBasedX(ivScene, answer.getRelativeCoordinateX()), utils.getQuadrantBasedY(ivScene, answer.getRelativeCoordinateY()), 0, 0);
-        params.height = utils.getQuadrantBasedHeight(ivScene, 4);
-        params.width = utils.getQuadrantBasedWidth(ivScene, 4);
+        params.setMargins(utils.getQuadrantBasedX(flSceneFrame, answer.getRelativeCoordinateX()), utils.getQuadrantBasedY(flSceneFrame, answer.getRelativeCoordinateY()), 0, 0);
+        params.height = utils.getQuadrantBasedHeight(flSceneFrame, answer.getRelativeSize());
+        params.width = utils.getQuadrantBasedWidth(flSceneFrame, answer.getRelativeSize());
         btAnswer.setLayoutParams(params);
     }
 
@@ -149,6 +156,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     private void showResult(){ // Mostrar botao next e etiqueta com a resposta escolhida.
+        if (Utils.isKitkat()) TransitionManager.beginDelayedTransition(llBody);
         btNext.setVisibility(View.VISIBLE);
     }
 
