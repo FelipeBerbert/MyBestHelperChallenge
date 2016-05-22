@@ -1,53 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.redbooth.WelcomePageLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.redbooth.WelcomePageLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorGreen"
     android:paddingLeft="20dp"
-    android:paddingRight="20dp"
-    android:background="@color/colorGreen">
+    android:paddingRight="20dp">
 
     <TextView
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/header_result_page"
-        app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour"
         android:layout_alignParentTop="true"
-        android:paddingTop="50dp"
         android:paddingBottom="20dp"
+        android:paddingTop="50dp"
+        android:text="@string/header_result_page"
         android:textColor="@android:color/white"
-        android:textSize="24dp"/>
+        android:textSize="24dp"
+        app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour" />
 
-    <TextView
-        android:id="@+id/tv_description"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/white"
         android:layout_below="@id/tv_result"
-        android:textSize="18dp"/>
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/img_result"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:scaleType="fitXY"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"/>
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/img_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
 
     <Button
-        style="?attr/borderlessButtonStyle"
         android:id="@+id/bt_continue"
+        style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="continue"
-        android:textColor="@android:color/white"
-        android:layout_below="@id/img_result"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/img_result"
+        android:gravity="right"
         android:paddingTop="70dp"
-        android:gravity="right"/>
+        android:text="continue"
+        android:textColor="@android:color/white" />
 
 </com.redbooth.WelcomePageLayout>

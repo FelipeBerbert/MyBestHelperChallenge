@@ -122,6 +122,7 @@ public class QuestionActivity extends AppCompatActivity {
                 ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
                 TransitionManager.beginDelayedTransition(llBody, slide);
             }
+
             btNext.setVisibility(View.GONE);
             currentQuestion = getQuestionById(questionProgress);
             ivScene.setVisibility(View.GONE);
@@ -142,6 +143,7 @@ public class QuestionActivity extends AppCompatActivity {
                 }
             });
         } else {
+            questionProgress = 10;
             Intent intent = new Intent(this, ResultActivity_.class);
             startActivity(intent);
         }
@@ -150,7 +152,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Background
     void waitAnimations() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

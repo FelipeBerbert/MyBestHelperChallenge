@@ -43,22 +43,22 @@ public class ResultActivity extends AppCompatActivity {
             case 1:
                 tvResult.setText("Happiest Helper");
                 tvDescription.setText(getString(R.string.result_1));
-                imgResult.setBackground(getResources().getDrawable(R.drawable.hh));
+                imgResult.setImageDrawable(getResources().getDrawable(R.drawable.hh));
                 break;
             case 2:
                 tvResult.setText("Get things done");
                 tvDescription.setText(getString(R.string.result_2));
-                imgResult.setBackground(getResources().getDrawable(R.drawable.gtd));
+                imgResult.setImageDrawable(getResources().getDrawable(R.drawable.gtd));
                 break;
             case 3:
                 tvResult.setText("Most reliable");
                 tvDescription.setText(getString(R.string.result_3));
-                imgResult.setBackground(getResources().getDrawable(R.drawable.mr));
+                imgResult.setImageDrawable(getResources().getDrawable(R.drawable.mr));
                 break;
             default:
                 tvResult.setText("Like a genie");
                 tvDescription.setText(getString(R.string.result_4));
-                imgResult.setBackground(getResources().getDrawable(R.drawable.lg));
+                imgResult.setImageDrawable(getResources().getDrawable(R.drawable.lg));
                 break;
         }
 

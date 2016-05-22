@@ -17,12 +17,12 @@
         app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour"
         android:layout_alignParentTop="true"
         android:paddingTop="100dp"
-        android:paddingBottom="20dp"
         android:textColor="@android:color/white"
-        android:textSize="30dp"/>
+        android:textSize="24sp"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/til_user_email"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
