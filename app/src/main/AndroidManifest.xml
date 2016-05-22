@@ -28,11 +28,13 @@
             android:name="vanhackathon2016.mybesthelperchallenge.gui.MovingBlocksActivity_"
             android:screenOrientation="portrait"/>
 
-
         <activity
             android:name="vanhackathon2016.mybesthelperchallenge.gui.QuestionActivity_"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="vanhackathon2016.mybesthelperchallenge.gui.UserInfoActivity_"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
