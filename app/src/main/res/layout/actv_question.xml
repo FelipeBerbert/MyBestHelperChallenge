@@ -3,7 +3,7 @@
     android:id="@+id/ll_body"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c6202d"
+    android:background="@color/colorRed"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:background="#ccc6202d"
+            android:background="@color/colorRedTranslucent"
             android:textColor="@android:color/white"
             android:text="@string/lb_next"
             android:visibility="gone"

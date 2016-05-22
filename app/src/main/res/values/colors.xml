@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorRed">#c6202d</color>
+    <color name="colorRedTranslucent">#ccc6202d</color>
     <color name="colorYellow">#fcca0a</color>
     <color name="colorBlue">#217bbd</color>
 </resources>
