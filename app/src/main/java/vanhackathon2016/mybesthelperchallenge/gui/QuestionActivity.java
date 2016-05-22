@@ -4,7 +4,9 @@ import android.animation.Animator;
 import android.annotation.TargetApi;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
 import android.transition.TransitionManager;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vanhackathon2016.mybesthelperchallange.R;
+import vanhackathon2016.mybesthelperchallenge.gui.behaviors.ContinuousSlide;
 import vanhackathon2016.mybesthelperchallenge.models.AnswerModel;
 import vanhackathon2016.mybesthelperchallenge.models.QuestionModel;
 import vanhackathon2016.mybesthelperchallenge.utils.Utils;
@@ -107,15 +110,20 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void callNextQuestion() { // Apagar botao next, apagar etiqueta da resposta, reposicionar botoes
         questionProgress++;
-        if (Utils.isKitkat()) TransitionManager.beginDelayedTransition(llBody);
+
+
+        if (Utils.isKitkat()){
+            ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
+            TransitionManager.beginDelayedTransition(llBody, slide);
+        }
 
         if (tvResult != null)
             flSceneFrame.removeView(tvResult);
 
-        tvQuestion.setText("");
-
         btNext.setVisibility(View.GONE);
         final QuestionModel question = getQuestionById(questionProgress);
+
+        tvQuestion.setText(question.getText());
 
         ivScene.setImageDrawable(getResources().getDrawable(question.getScene()));
         ivScene.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -126,7 +134,6 @@ public class QuestionActivity extends AppCompatActivity {
                 for (int i = 0; i < 4; i++) {
                     positionAnswer(answerButtonList.get(i), question.getAnswers().get(i));
                 }
-                tvQuestion.setText(question.getText());
             }
         });
     }
@@ -180,6 +187,7 @@ public class QuestionActivity extends AppCompatActivity {
         tvResult.setBackgroundColor(getResources().getColor(R.color.colorRedTranslucent));
         tvResult.setTextColor(getResources().getColor(android.R.color.white));
         tvResult.setText(selectedAnswer.getText());
+        tvResult.setPadding(4, 4, 4, 4);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.setMargins(utils.getQuadrantBasedX(ivScene, selectedAnswer.getRelativeCoordinateX()), utils.getQuadrantBasedY(ivScene, selectedAnswer.getRelativeCoordinateY()), 0, 0);
         flSceneFrame.addView(tvResult, params);
