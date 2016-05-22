@@ -5,14 +5,19 @@ Project developed as part of the VanHackthon 2016. The challenge, propoused by M
 The team working on this projet is composed by:
 
 Angelo Orrico
+
 https://github.com/angeloorrico
+
 https://www.linkedin.com/in/angeloorrico
 
 Felipe Berbert
+
 https://github.com/FelipeBerbert
+
 https://br.linkedin.com/in/felipe-berbert-3765a6b4
 
 Luan Santana
+
 https://br.linkedin.com/in/luansmm
 
 The MIT License (MIT)
