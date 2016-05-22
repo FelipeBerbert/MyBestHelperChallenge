@@ -27,7 +27,7 @@ public class ResultActivity extends AppCompatActivity {
 
     ImageView imgResult;
 
-    TextView tvResult;
+    TextView tvResult, tvDescription;
 
     @AfterViews
     public void init() {
@@ -36,6 +36,7 @@ public class ResultActivity extends AppCompatActivity {
 
         imgResult = (ImageView) coordinator.findViewById(R.id.img_result);
         tvResult = (TextView) coordinator.findViewById(R.id.tv_result);
+        tvDescription = (TextView) coordinator.findViewById(R.id.tv_description);
         btContinue = (Button) coordinator.findViewById(R.id.bt_continue);
 
         result = 1 + (int)(Math.random() * 4);
@@ -43,18 +44,22 @@ public class ResultActivity extends AppCompatActivity {
         switch (result) {
             case 1:
                 tvResult.setText("Happiest Helper");
+                tvDescription.setText("");
                 imgResult.setBackground(getResources().getDrawable(R.drawable.hh));
                 break;
             case 2:
                 tvResult.setText("Get things done");
+                tvDescription.setText("");
                 imgResult.setBackground(getResources().getDrawable(R.drawable.gtd));
                 break;
             case 3:
                 tvResult.setText("Most reliable");
+                tvDescription.setText("");
                 imgResult.setBackground(getResources().getDrawable(R.drawable.mr));
                 break;
             default:
                 tvResult.setText("Like a genie");
+                tvDescription.setText("");
                 imgResult.setBackground(getResources().getDrawable(R.drawable.lg));
                 break;
         }
