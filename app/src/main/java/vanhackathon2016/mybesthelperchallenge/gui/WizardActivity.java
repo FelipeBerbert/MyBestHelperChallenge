@@ -82,7 +82,8 @@ public class WizardActivity extends AppCompatActivity {
     }
 
     private void goToQuestionary() {
-        Intent intent = new Intent(this, WelcomeActivity_.class);
+        //Intent intent = new Intent(this, WelcomeActivity_.class);
+        Intent intent = new Intent(this, ResultActivity_.class);
         startActivity(intent);
     }
 

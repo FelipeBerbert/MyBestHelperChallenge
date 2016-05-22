@@ -36,6 +36,11 @@
             android:name="vanhackathon2016.mybesthelperchallenge.gui.UserInfoActivity_"
             android:screenOrientation="portrait"
             android:theme="@style/NoActionBar"/>
+
+        <activity
+            android:name="vanhackathon2016.mybesthelperchallenge.gui.ResultActivity_"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActionBar"/>
     </application>
 
 </manifest>
