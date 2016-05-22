@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme">
         <activity android:name="vanhackathon2016.mybesthelperchallenge.gui.WizardActivity_"
             android:theme="@style/NoActionBar"
+            android:screenOrientation="portrait"
             android:noHistory="true">
                 <intent-filter>
                     <action android:name="android.intent.action.MAIN" />
@@ -18,10 +19,12 @@
                 </intent-filter>
         </activity>
 
-        <activity android:name="vanhackathon2016.mybesthelperchallenge.gui.WelcomeActivity_"/>
+        <activity android:name="vanhackathon2016.mybesthelperchallenge.gui.WelcomeActivity_"
+            android:screenOrientation="portrait"/>
 
         <activity
-            android:name="vanhackathon2016.mybesthelperchallenge.gui.MovingBlocksActivity_"/>
+            android:name="vanhackathon2016.mybesthelperchallenge.gui.MovingBlocksActivity_"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
