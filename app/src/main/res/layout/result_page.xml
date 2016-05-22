@@ -9,7 +9,6 @@
     android:paddingRight="20dp">
 
     <TextView
-        android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -17,41 +16,53 @@
         android:paddingTop="50dp"
         android:text="@string/header_result_page"
         android:textColor="@android:color/white"
-        android:textSize="24dp"
+        android:textSize="20sp"
         app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour" />
 
     <LinearLayout
+        android:id="@+id/ll_center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_result"
+        android:layout_centerVertical="true"
         android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_description"
+            android:id="@+id/tv_result"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingBottom="20dp"
+            android:paddingTop="50dp"
+            android:text="@string/header_result_page"
             android:textColor="@android:color/white"
-            android:textSize="18dp" />
+            android:textSize="32sp" />
 
         <ImageView
             android:id="@+id/img_result"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="100dp"
             android:layout_marginBottom="40dp"
             android:layout_marginTop="40dp"
+            android:layout_weight="1"
             android:scaleType="fitCenter" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/bt_continue"
         style="?attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@id/img_result"
         android:gravity="right"
         android:paddingTop="70dp"
