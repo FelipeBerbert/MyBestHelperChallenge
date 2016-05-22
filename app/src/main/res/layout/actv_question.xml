@@ -10,7 +10,8 @@
     <LinearLayout
         android:id="@+id/ll_question"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_margin="16dp"
         android:gravity="center_vertical"
         >
@@ -26,8 +27,9 @@
     <FrameLayout
         android:id="@+id/fl_scene_frame"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content"
+        android:background="@drawable/square"
+        >
 
         <ImageView
             android:id="@+id/iv_scene"
