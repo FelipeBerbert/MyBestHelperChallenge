@@ -116,39 +116,39 @@ public class QuestionActivity extends AppCompatActivity {
     private void callNextQuestion() { // Apagar botao next, apagar etiqueta da resposta, reposicionar botoes
         questionProgress++;
 
-        if (questionProgress >10){
+        if (questionProgress <= 10) {
+
+            if (Utils.isKitkat()) {
+                ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
+                TransitionManager.beginDelayedTransition(llBody, slide);
+            }
+            btNext.setVisibility(View.GONE);
+            currentQuestion = getQuestionById(questionProgress);
+            ivScene.setVisibility(View.GONE);
+            tvQuestion.setVisibility(View.GONE);
+
+            if (tvResult != null) {
+                flSceneFrame.removeView(tvResult);
+            }
+            ivScene.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    ivScene.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    resizeSceneArea();
+                    for (int i = 0; i < 4; i++) {
+                        positionAnswer(answerButtonList.get(i), currentQuestion.getAnswers().get(i));
+                        waitAnimations();
+                    }
+                }
+            });
+        } else {
             Intent intent = new Intent(this, ResultActivity_.class);
             startActivity(intent);
         }
-
-
-        if (Utils.isKitkat()) {
-            ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
-            TransitionManager.beginDelayedTransition(llBody, slide);
-        }
-        btNext.setVisibility(View.GONE);
-        currentQuestion = getQuestionById(questionProgress);
-        ivScene.setVisibility(View.GONE);
-        tvQuestion.setVisibility(View.GONE);
-
-        if (tvResult != null) {
-            flSceneFrame.removeView(tvResult);
-        }
-        ivScene.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                ivScene.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                resizeSceneArea();
-                for (int i = 0; i < 4; i++) {
-                    positionAnswer(answerButtonList.get(i), currentQuestion.getAnswers().get(i));
-                    waitAnimations();
-                }
-            }
-        });
     }
 
     @Background
-    void waitAnimations(){
+    void waitAnimations() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -158,7 +158,7 @@ public class QuestionActivity extends AppCompatActivity {
     }
 
     @UiThread
-    void pullControlsBack(){
+    void pullControlsBack() {
         tvQuestion.setText(currentQuestion.getText());
         ivScene.setImageDrawable(getResources().getDrawable(currentQuestion.getScene()));
         if (Utils.isKitkat()) {

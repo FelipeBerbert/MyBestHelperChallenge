@@ -4,8 +4,11 @@ import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.redbooth.WelcomeCoordinatorLayout;
 
@@ -36,6 +39,16 @@ public class WelcomeActivity extends AppCompatActivity {
         edUserName = (TextInputEditText) coordinator.findViewById(R.id.ed_user_name);
         start = (Button) coordinator.findViewById(R.id.start);
 
+        edUserName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_DONE) {
+                    goToQuestions();
+                    return true;
+                }
+                return false;
+            }
+        });
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

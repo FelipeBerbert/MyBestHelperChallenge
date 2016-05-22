@@ -18,8 +18,6 @@ import vanhackathon2016.mybesthelperchallange.R;
 @EActivity(R.layout.activity_result)
 public class ResultActivity extends AppCompatActivity {
 
-    public static int result;
-
     @ViewById
     WelcomeCoordinatorLayout coordinator;
 
@@ -39,7 +37,7 @@ public class ResultActivity extends AppCompatActivity {
         tvDescription = (TextView) coordinator.findViewById(R.id.tv_description);
         btContinue = (Button) coordinator.findViewById(R.id.bt_continue);
 
-        result = 1 + (int)(Math.random() * 4);
+        int result = 1 + (int)(Math.random() * 4);
 
         switch (result) {
             case 1:
