@@ -88,4 +88,9 @@
 
     <string name="msg_welcome">Congratulations and welcome to My Best Helper!</string>
 
+    <string name="result_1">I bring joy and fun into every situation. I love people and am thrilled to know I can make their lives better.</string>
+    <string name="result_2">Energetic multitasker, I am the person everyone looks to when they want to make sure all is handled!</string>
+    <string name="result_3">All friends  always turn to me as I am like a rock - I will always be there for them and help them out.</string>
+    <string name="result_4">I just know what needs to be done, and do it! No instructions required, when I am in charge, everything is better.</string>
+
 </resources>
