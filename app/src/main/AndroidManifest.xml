@@ -18,7 +18,10 @@
 
         <activity
             android:name="vanhackathon2016.mybesthelperchallenge.gui.MovingBlocksActivity_"
+            />
 
+        <activity
+            android:name="vanhackathon2016.mybesthelperchallenge.gui.QuestionActivity_"
             />
     </application>
 

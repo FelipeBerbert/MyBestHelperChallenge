@@ -1,5 +1,7 @@
 package vanhackathon2016.mybesthelperchallenge.models;
 
+import android.content.Context;
+
 import java.io.Serializable;
 import java.util.List;
 

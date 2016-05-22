@@ -1,6 +1,7 @@
 package vanhackathon2016.mybesthelperchallenge.utils;
 
 import android.content.Context;
+import android.os.Build;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +81,15 @@ public class Utils {
         }
 
         return answers;
+    }
+
+
+    public static boolean isKitkat(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+    }
+
+    public static boolean isLollipop(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
 
 }

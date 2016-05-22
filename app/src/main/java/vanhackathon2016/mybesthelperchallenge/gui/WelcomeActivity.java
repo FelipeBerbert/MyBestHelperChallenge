@@ -13,7 +13,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Click(R.id.bt_start)
     void start(){
-        Intent intent = new Intent(this, MovingBlocksActivity_.class);
+        Intent intent = new Intent(this, QuestionActivity_.class);
         startActivity(intent);
     }
 
