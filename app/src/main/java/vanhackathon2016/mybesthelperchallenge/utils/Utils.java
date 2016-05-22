@@ -1,11 +1,8 @@
 package vanhackathon2016.mybesthelperchallenge.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.media.MediaPlayer;
-import android.graphics.Point;
 import android.os.Build;
-import android.view.Display;
 import android.view.View;
 
 import org.androidannotations.annotations.EBean;
@@ -54,16 +51,16 @@ public class Utils {
 
     public List<QuestionModel> getQuestions(Context c){
         ArrayList<QuestionModel> questionList = new ArrayList<>();
-        questionList.add(new QuestionModel(1, c.getString(R.string.question_1), getAnswersToQuestion(c, 1), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(2, c.getString(R.string.question_2), getAnswersToQuestion(c, 2), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(3, c.getString(R.string.question_3), getAnswersToQuestion(c, 3), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(4, c.getString(R.string.question_4), getAnswersToQuestion(c, 4), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(5, c.getString(R.string.question_5), getAnswersToQuestion(c, 5), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(6, c.getString(R.string.question_6), getAnswersToQuestion(c, 6), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(7, c.getString(R.string.question_7), getAnswersToQuestion(c, 7), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(8, c.getString(R.string.question_8), getAnswersToQuestion(c, 8), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(9, c.getString(R.string.question_9), getAnswersToQuestion(c, 9), R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(10, c.getString(R.string.question_10), getAnswersToQuestion(c, 10), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(1, c.getString(R.string.question_1), getAnswersToQuestion(c, 1), R.drawable.pergunta1));
+        questionList.add(new QuestionModel(2, c.getString(R.string.question_2), getAnswersToQuestion(c, 2), R.drawable.pergunta2));
+        questionList.add(new QuestionModel(3, c.getString(R.string.question_3), getAnswersToQuestion(c, 3), R.drawable.pergunta3));
+        questionList.add(new QuestionModel(4, c.getString(R.string.question_4), getAnswersToQuestion(c, 4), R.drawable.pergunta4));
+        questionList.add(new QuestionModel(5, c.getString(R.string.question_5), getAnswersToQuestion(c, 5), R.drawable.pergunta5));
+        questionList.add(new QuestionModel(6, c.getString(R.string.question_6), getAnswersToQuestion(c, 6), R.drawable.pergunta1));
+        questionList.add(new QuestionModel(7, c.getString(R.string.question_7), getAnswersToQuestion(c, 7), R.drawable.pergunta7));
+        questionList.add(new QuestionModel(8, c.getString(R.string.question_8), getAnswersToQuestion(c, 8), R.drawable.pergunta8));
+        questionList.add(new QuestionModel(9, c.getString(R.string.question_9), getAnswersToQuestion(c, 9), R.drawable.pergunta9));
+        questionList.add(new QuestionModel(10, c.getString(R.string.question_10), getAnswersToQuestion(c, 10), R.drawable.pergunta10));
         return questionList;
     }
 
@@ -92,20 +89,20 @@ public class Utils {
             case 2:
                 answers.add(
                         new AnswerModel(2, c.getResources().getString(R.string.answer_2_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(2, c.getResources().getString(R.string.answer_2_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(2, c.getResources().getString(R.string.answer_2_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(2, c.getResources().getString(R.string.answer_2_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
             case 3:
                 answers.add(
@@ -128,38 +125,38 @@ public class Utils {
             case 4:
                 answers.add(
                         new AnswerModel(4, c.getResources().getString(R.string.answer_4_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(4, c.getResources().getString(R.string.answer_4_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(4, c.getResources().getString(R.string.answer_4_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(4, c.getResources().getString(R.string.answer_4_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
             case 5:
                 answers.add(
                         new AnswerModel(5, c.getResources().getString(R.string.answer_5_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(5, c.getResources().getString(R.string.answer_5_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(5, c.getResources().getString(R.string.answer_5_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(5, c.getResources().getString(R.string.answer_5_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
             case 6:
                 answers.add(
@@ -182,74 +179,74 @@ public class Utils {
             case 7:
                 answers.add(
                         new AnswerModel(7, c.getResources().getString(R.string.answer_7_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(7, c.getResources().getString(R.string.answer_7_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(7, c.getResources().getString(R.string.answer_7_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(7, c.getResources().getString(R.string.answer_7_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
             case 8:
                 answers.add(
                         new AnswerModel(8, c.getResources().getString(R.string.answer_8_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(8, c.getResources().getString(R.string.answer_8_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(8, c.getResources().getString(R.string.answer_8_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(8, c.getResources().getString(R.string.answer_8_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
             case 9:
                 answers.add(
                         new AnswerModel(9, c.getResources().getString(R.string.answer_9_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(9, c.getResources().getString(R.string.answer_9_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(9, c.getResources().getString(R.string.answer_9_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(9, c.getResources().getString(R.string.answer_9_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
             case 10:
                 answers.add(
                         new AnswerModel(10, c.getResources().getString(R.string.answer_10_question_1),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(10, c.getResources().getString(R.string.answer_10_question_2),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(0, 2), 2));
                 answers.add(
                         new AnswerModel(10, c.getResources().getString(R.string.answer_10_question_3),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(0, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 answers.add(
                         new AnswerModel(10, c.getResources().getString(R.string.answer_10_question_4),
-                                new RelativeCoordinate(1, 1),
-                                new RelativeCoordinate(1, 1), 4));
+                                new RelativeCoordinate(1, 2),
+                                new RelativeCoordinate(1, 2), 2));
                 break;
         }
 

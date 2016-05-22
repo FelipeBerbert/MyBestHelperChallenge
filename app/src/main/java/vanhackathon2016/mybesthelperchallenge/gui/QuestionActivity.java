@@ -116,16 +116,17 @@ public class QuestionActivity extends AppCompatActivity {
             ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
             TransitionManager.beginDelayedTransition(llBody, slide);
         }
-
-        if (tvResult != null)
-            flSceneFrame.removeView(tvResult);
-
         btNext.setVisibility(View.GONE);
+
+
         final QuestionModel question = getQuestionById(questionProgress);
-
         tvQuestion.setText(question.getText());
-
+        ivScene.setVisibility(View.GONE);
         ivScene.setImageDrawable(getResources().getDrawable(question.getScene()));
+        ivScene.setVisibility(View.VISIBLE);
+        if (tvResult != null) {
+            flSceneFrame.removeView(tvResult);
+        }
         ivScene.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
