@@ -54,8 +54,6 @@ public class WizardActivity extends AppCompatActivity {
                 } else if (pageSelected == 1) {
                     skip.setTextColor(Color.BLACK);
                     done.setVisibility(View.GONE);
-
-                    tvHeader2.setTextColor(Color.BLACK);
                 } else {
                     skip.setTextColor(Color.WHITE);
                     done.setVisibility(View.VISIBLE);
