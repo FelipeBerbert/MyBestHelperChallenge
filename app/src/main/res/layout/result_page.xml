@@ -19,7 +19,7 @@
         android:paddingTop="50dp"
         android:paddingBottom="20dp"
         android:textColor="@android:color/white"
-        android:textSize="30dp"/>
+        android:textSize="24dp"/>
 
     <TextView
         android:id="@+id/tv_description"
