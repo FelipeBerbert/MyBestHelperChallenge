@@ -68,6 +68,8 @@
     <string name="header_page_2">Find the perfect job for you</string>
     <string name="header_page_3">Connect with great people</string>
 
+    <string name="header_user_page_name">But... Wait! You didn\'t say your name...</string>
+
     <string name="text_page_1">Find child, elder, fome and pet caregivers.</string>
     <string name="text_page_2">Quickly create a profile and find the job that fits your needs.</string>
     <string name="text_page_3">We will suggest you great people who truly meet your needs. Life made better.</string>
@@ -76,5 +78,7 @@
     <string name="tag_answer_2">ans2</string>
     <string name="tag_answer_3">ans3</string>
     <string name="tag_answer_4">ans4</string>
+
+    <string name="msg_error_user_name">Please say your name</string>
 
 </resources>
