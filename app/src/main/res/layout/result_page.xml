@@ -16,7 +16,7 @@
         android:text="@string/header_result_page"
         app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour"
         android:layout_alignParentTop="true"
-        android:paddingTop="30dp"
+        android:paddingTop="50dp"
         android:paddingBottom="20dp"
         android:textColor="@android:color/white"
         android:textSize="30dp"/>
@@ -27,14 +27,16 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:layout_below="@id/tv_result"
-        android:paddingBottom="30dp"/>
+        android:textSize="18dp"/>
 
     <ImageView
         android:id="@+id/img_result"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"
-        android:scaleType="fitXY"/>
+        android:scaleType="fitXY"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"/>
 
     <Button
         style="?attr/borderlessButtonStyle"
