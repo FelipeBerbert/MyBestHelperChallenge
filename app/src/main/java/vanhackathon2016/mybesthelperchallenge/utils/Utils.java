@@ -15,6 +15,7 @@ import java.util.List;
 
 import vanhackathon2016.mybesthelperchallange.R;
 import vanhackathon2016.mybesthelperchallenge.models.AnswerModel;
+import vanhackathon2016.mybesthelperchallenge.models.QuestionModel;
 import vanhackathon2016.mybesthelperchallenge.models.RelativeCoordinate;
 
 /**
@@ -23,18 +24,18 @@ import vanhackathon2016.mybesthelperchallenge.models.RelativeCoordinate;
 @EBean
 public class Utils {
 
-    public int getQuadrantBasedX(View view, int quadrant, int numOfQuadrants){
+    public int getQuadrantBasedX(View view, RelativeCoordinate coordinates){
         /*Display display = activity.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);*/
         int size = view.getWidth();
-        quadrant = (quadrant % numOfQuadrants);
-        return (size / numOfQuadrants * quadrant);
+        coordinates.relativePosition = (coordinates.relativePosition % coordinates.reference); // for safety
+        return (size / coordinates.reference * coordinates.relativePosition);
     }
-    public int getQuadrantBasedY(View view, int quadrant, int numOfQuadrants){
+    public int getQuadrantBasedY(View view, RelativeCoordinate coordinates){
         int size = view.getHeight();
-        quadrant = (quadrant % numOfQuadrants);
-        return (size / numOfQuadrants * quadrant);
+        coordinates.relativePosition = (coordinates.relativePosition % coordinates.reference); // for safety
+        return (size / coordinates.reference * coordinates.relativePosition);
     }
 
     public int getQuadrantBasedWidth(View view, int numOfQuadrants){
@@ -50,6 +51,21 @@ public class Utils {
         return size / numOfQuadrants;
     }
 
+    public List<QuestionModel> getQuestions(Context c){
+        ArrayList<QuestionModel> questionList = new ArrayList<>();
+        questionList.add(new QuestionModel(1, c.getString(R.string.question_1), getAnswersToQuestion(c, 1), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(2, c.getString(R.string.question_2), getAnswersToQuestion(c, 2), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(3, c.getString(R.string.question_3), getAnswersToQuestion(c, 3), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(4, c.getString(R.string.question_4), getAnswersToQuestion(c, 4), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(5, c.getString(R.string.question_5), getAnswersToQuestion(c, 5), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(6, c.getString(R.string.question_6), getAnswersToQuestion(c, 6), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(7, c.getString(R.string.question_7), getAnswersToQuestion(c, 7), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(8, c.getString(R.string.question_8), getAnswersToQuestion(c, 8), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(9, c.getString(R.string.question_9), getAnswersToQuestion(c, 9), R.drawable.pergunta1_2));
+        questionList.add(new QuestionModel(10, c.getString(R.string.question_10), getAnswersToQuestion(c, 10), R.drawable.pergunta1_2));
+        return questionList;
+    }
+
     public List<AnswerModel> getAnswersToQuestion(Context c, int questionId) {
         ArrayList<AnswerModel> answers = new ArrayList<>();
 
@@ -58,19 +74,19 @@ public class Utils {
                 answers.add(
                         new AnswerModel(1, c.getResources().getString(R.string.answer_1_question_1),
                                 new RelativeCoordinate(2, 36),
-                                new RelativeCoordinate(18, 32)));
+                                new RelativeCoordinate(16, 32)));
                 answers.add(
                         new AnswerModel(1, c.getResources().getString(R.string.answer_1_question_2),
                                 new RelativeCoordinate(23, 36),
                                 new RelativeCoordinate(18, 32)));
                 answers.add(
                         new AnswerModel(1, c.getResources().getString(R.string.answer_1_question_3),
-                                new RelativeCoordinate(16, 36),
-                                new RelativeCoordinate(11, 32)));
+                                new RelativeCoordinate(14, 36),
+                                new RelativeCoordinate(8, 32)));
                 answers.add(
                         new AnswerModel(1, c.getResources().getString(R.string.answer_1_question_4),
-                                new RelativeCoordinate(7, 36),
-                                new RelativeCoordinate(29, 32)));
+                                new RelativeCoordinate(4, 36),
+                                new RelativeCoordinate(24, 32)));
                 break;
             case 2:
                 answers.add(

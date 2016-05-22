@@ -3,12 +3,10 @@ package vanhackathon2016.mybesthelperchallenge.gui;
 import android.animation.Animator;
 import android.annotation.TargetApi;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewAnimationUtils;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
@@ -25,8 +23,10 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import vanhackathon2016.mybesthelperchallange.R;
+import vanhackathon2016.mybesthelperchallenge.models.AnswerModel;
 import vanhackathon2016.mybesthelperchallenge.models.QuestionModel;
 import vanhackathon2016.mybesthelperchallenge.utils.Utils;
 
@@ -56,7 +56,8 @@ public class QuestionActivity extends AppCompatActivity {
 
     private int questionProgress;
 
-    ArrayList<QuestionModel> questionList;
+    List<QuestionModel> questionList;
+    List<Button> answerButtonList;
 
     @AfterViews
     void init() {
@@ -66,18 +67,12 @@ public class QuestionActivity extends AppCompatActivity {
         tvQuestion.setText(getString(R.string.question_1));
         ivScene.setVisibility(View.INVISIBLE);
         ivScene.setImageDrawable(getResources().getDrawable(R.drawable.pergunta1_2));*/
-
-        questionList = new ArrayList<>();
-        questionList.add(new QuestionModel(1, getString(R.string.question_1), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(2, getString(R.string.question_2), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(3, getString(R.string.question_3), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(4, getString(R.string.question_4), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(5, getString(R.string.question_5), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(6, getString(R.string.question_6), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(7, getString(R.string.question_7), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(8, getString(R.string.question_8), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(9, getString(R.string.question_9), null, R.drawable.pergunta1_2));
-        questionList.add(new QuestionModel(10, getString(R.string.question_10), null, R.drawable.pergunta1_2));
+        questionList = utils.getQuestions(this);
+        answerButtonList = new ArrayList<>();
+        answerButtonList.add(btAnswer1);
+        answerButtonList.add(btAnswer2);
+        answerButtonList.add(btAnswer3);
+        answerButtonList.add(btAnswer4);
 
 
         ivScene.post(new Runnable() {
@@ -99,51 +94,61 @@ public class QuestionActivity extends AppCompatActivity {
         return null;
     }
 
-    private void callNextQuestion() { // Apagar botao next, apagar etiqueta da resposta, passar as views para
+    private void callNextQuestion() { // Apagar botao next, apagar etiqueta da resposta, reposicionar botoes
         questionProgress++;
-        if (Utils.isKitkat()) TransitionManager.beginDelayedTransition(llQuestion);
+        if (Utils.isKitkat()) TransitionManager.beginDelayedTransition(llBody);
+
+
         btNext.setVisibility(View.GONE);
-        QuestionModel question = getQuestionById(questionProgress);
+        final QuestionModel question = getQuestionById(questionProgress);
+
         ivScene.setImageDrawable(getResources().getDrawable(question.getScene()));
         ivScene.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 ivScene.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) btAnswer1.getLayoutParams();
-                params.setMargins(utils.getQuadrantBasedX(ivScene, 1, 20), utils.getQuadrantBasedY(ivScene, 5, 10), 0, 0);
-                params.height = utils.getQuadrantBasedHeight(ivScene, 4);
-                params.width = utils.getQuadrantBasedWidth(ivScene, 4);
-                btAnswer1.setLayoutParams(params);
+                for (int i = 0; i < 4; i ++){
+                    positionAnswer(answerButtonList.get(i), question.getAnswers().get(i));
+                }
             }
         });
         tvQuestion.setText(question.getText());
-
-
     }
 
+    private void positionAnswer(Button btAnswer, AnswerModel answer){
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) btAnswer.getLayoutParams();
+        params.setMargins(utils.getQuadrantBasedX(ivScene, answer.getRelativeCoordinateX()), utils.getQuadrantBasedY(ivScene, answer.getRelativeCoordinateY()), 0, 0);
+        params.height = utils.getQuadrantBasedHeight(ivScene, 4);
+        params.width = utils.getQuadrantBasedWidth(ivScene, 4);
+        btAnswer.setLayoutParams(params);
+    }
 
     @Click(R.id.bt_answer1)
     void clickAnswer1() {
         Toast.makeText(QuestionActivity.this, "hit! answer 1", Toast.LENGTH_LONG).show();
+        showResult();
     }
     @Click(R.id.bt_answer2)
     void clickAnswer2() {
         Toast.makeText(QuestionActivity.this, "hit! answer 2", Toast.LENGTH_LONG).show();
+        showResult();
     }
     @Click(R.id.bt_answer3)
     void clickAnswer3() {
         Toast.makeText(QuestionActivity.this, "hit! answer 3", Toast.LENGTH_LONG).show();
+        showResult();
     }
     @Click(R.id.bt_answer4)
     void clickAnswer4() {
         Toast.makeText(QuestionActivity.this, "hit! answer 4", Toast.LENGTH_LONG).show();
+        showResult();
     }
     @Click(R.id.bt_next)
     void clickNext(){
         callNextQuestion();
     }
 
-    private void showResult(){
+    private void showResult(){ // Mostrar botao next e etiqueta com a resposta escolhida.
         btNext.setVisibility(View.VISIBLE);
     }
 

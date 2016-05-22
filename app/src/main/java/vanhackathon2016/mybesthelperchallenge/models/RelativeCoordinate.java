@@ -9,7 +9,7 @@ public class RelativeCoordinate {
 
     public int relativePosition;
 
-    public RelativeCoordinate(int reference, int relativePosition) {
+    public RelativeCoordinate(int relativePosition, int reference) {
         this.reference = reference;
         this.relativePosition = relativePosition;
     }
