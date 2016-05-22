@@ -20,9 +20,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
 import java.util.ArrayList;
@@ -62,6 +64,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     List<QuestionModel> questionList;
     List<Button> answerButtonList;
+    QuestionModel currentQuestion;
 
     AnswerModel selectedAnswer;
 
@@ -83,10 +86,10 @@ public class QuestionActivity extends AppCompatActivity {
         answerButtonList.add(btAnswer4);
 
 
-        ivScene.post(new Runnable() {
+        llBody.post(new Runnable() {
             @Override
             public void run() {
-                animateRevealShow(ivScene);
+//                animateRevealShow(ivScene);
                 callNextQuestion();
             }
         });
@@ -112,18 +115,15 @@ public class QuestionActivity extends AppCompatActivity {
         questionProgress++;
 
 
-        if (Utils.isKitkat()){
+        if (Utils.isKitkat()) {
             ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
             TransitionManager.beginDelayedTransition(llBody, slide);
         }
         btNext.setVisibility(View.GONE);
-
-
-        final QuestionModel question = getQuestionById(questionProgress);
-        tvQuestion.setText(question.getText());
+        currentQuestion = getQuestionById(questionProgress);
         ivScene.setVisibility(View.GONE);
-        ivScene.setImageDrawable(getResources().getDrawable(question.getScene()));
-        ivScene.setVisibility(View.VISIBLE);
+        tvQuestion.setVisibility(View.GONE);
+
         if (tvResult != null) {
             flSceneFrame.removeView(tvResult);
         }
@@ -133,10 +133,34 @@ public class QuestionActivity extends AppCompatActivity {
                 ivScene.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                 resizeSceneArea();
                 for (int i = 0; i < 4; i++) {
-                    positionAnswer(answerButtonList.get(i), question.getAnswers().get(i));
+                    positionAnswer(answerButtonList.get(i), currentQuestion.getAnswers().get(i));
+                    waitAnimations();
                 }
             }
         });
+    }
+
+    @Background
+    void waitAnimations(){
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        pullControlsBack();
+    }
+
+    @UiThread
+    void pullControlsBack(){
+        tvQuestion.setText(currentQuestion.getText());
+        ivScene.setImageDrawable(getResources().getDrawable(currentQuestion.getScene()));
+        if (Utils.isKitkat()) {
+            ContinuousSlide slide = new ContinuousSlide(Gravity.RIGHT);
+            TransitionManager.beginDelayedTransition(llBody, slide);
+        }
+        tvQuestion.setVisibility(View.VISIBLE);
+        ivScene.setVisibility(View.VISIBLE);
+
     }
 
     private void positionAnswer(Button btAnswer, AnswerModel answer) {
@@ -178,6 +202,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Click(R.id.bt_next)
     void clickNext() {
         callNextQuestion();
+        utils.playAudio(this);
     }
 
     private void showResult() { // Mostrar botao next e etiqueta com a resposta escolhida.
