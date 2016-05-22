@@ -1,6 +1,6 @@
 package vanhackathon2016.mybesthelperchallenge.gui;
 
-import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -21,22 +21,24 @@ public class UserInfoActivity extends AppCompatActivity {
     @ViewById
     WelcomeCoordinatorLayout coordinator;
 
-    TextInputLayout tilUserName;
+    TextInputLayout tilUserEmail, tilUserAge;
 
-    TextInputEditText edUserName;
+    TextInputEditText edUserEmail, edUserAge;
 
-    Button start;
+    Button submit;
 
     @AfterViews
     public void init() {
         coordinator.addPage(
                 R.layout.user_page_info);
 
-        tilUserName = (TextInputLayout) coordinator.findViewById(R.id.til_user_name);
-        edUserName = (TextInputEditText) coordinator.findViewById(R.id.ed_user_name);
-        start = (Button) coordinator.findViewById(R.id.start);
+        tilUserEmail = (TextInputLayout) coordinator.findViewById(R.id.til_user_email);
+        edUserEmail = (TextInputEditText) coordinator.findViewById(R.id.ed_user_email);
+        tilUserAge = (TextInputLayout) coordinator.findViewById(R.id.til_user_age);
+        edUserAge = (TextInputEditText) coordinator.findViewById(R.id.ed_user_age);
+        submit = (Button) coordinator.findViewById(R.id.submit);
 
-        start.setOnClickListener(new View.OnClickListener() {
+        submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToQuestions();
@@ -45,13 +47,17 @@ public class UserInfoActivity extends AppCompatActivity {
     }
 
     private void goToQuestions() {
-        if (edUserName.getText() == null || edUserName.getText().toString().isEmpty()) {
-            tilUserName.setError(getString(R.string.msg_error_user_name));
+        if (edUserEmail.getText() == null || edUserEmail.getText().toString().isEmpty()) {
+            tilUserEmail.setError(getString(R.string.msg_error_user_email));
             return;
         }
 
-        Intent intent = new Intent(this, QuestionActivity_.class);
-        startActivity(intent);
+        if (edUserAge.getText() == null || edUserAge.getText().toString().isEmpty()) {
+            tilUserAge.setError(getString(R.string.msg_error_user_age));
+            return;
+        }
+
+        Snackbar.make(coordinator, getString(R.string.msg_welcome), Snackbar.LENGTH_LONG).show();
     }
 
 }

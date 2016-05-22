@@ -81,5 +81,9 @@
     <string name="tag_answer_4">ans4</string>
 
     <string name="msg_error_user_name">Please say your name</string>
+    <string name="msg_error_user_email">Please inform your e-mail</string>
+    <string name="msg_error_user_age">Please inform your age</string>
+
+    <string name="msg_welcome">Congratulations and welcome to My Best Helper!</string>
 
 </resources>

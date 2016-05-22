@@ -33,6 +33,7 @@
             android:id="@+id/ed_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLines="1"
             android:hint="Name"
             android:textColor="@android:color/white"
             android:backgroundTint="@android:color/white"/>

@@ -22,7 +22,7 @@
         android:textSize="30dp"/>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_user_name"
+        android:id="@+id/til_user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -31,11 +31,34 @@
         app:errorEnabled="true"
         app:errorTextAppearance="@style/error_appearance">
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/ed_user_name"
+            android:id="@+id/ed_user_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:maxLines="1"
             android:hint="E-mail"
+            android:textColor="@android:color/white"
+            android:backgroundTint="@android:color/white"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/til_user_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        android:textColorHint="#70FFFFFF"
+        app:errorEnabled="true"
+        app:errorTextAppearance="@style/error_appearance"
+        android:layout_below="@id/til_user_email">
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/ed_user_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="3"
+            android:hint="Age"
             android:textColor="@android:color/white"
             android:backgroundTint="@android:color/white"/>
     </android.support.design.widget.TextInputLayout>
@@ -47,7 +70,7 @@
         android:layout_height="wrap_content"
         android:text="submit"
         android:textColor="@android:color/white"
-        android:layout_below="@id/til_user_name"
+        android:layout_below="@id/til_user_age"
         android:layout_alignParentRight="true"
         android:paddingTop="70dp"
         android:gravity="right"/>
