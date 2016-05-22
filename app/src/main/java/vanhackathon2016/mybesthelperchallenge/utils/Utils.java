@@ -56,7 +56,7 @@ public class Utils {
         questionList.add(new QuestionModel(3, c.getString(R.string.question_3), getAnswersToQuestion(c, 3), R.drawable.pergunta3));
         questionList.add(new QuestionModel(4, c.getString(R.string.question_4), getAnswersToQuestion(c, 4), R.drawable.pergunta4));
         questionList.add(new QuestionModel(5, c.getString(R.string.question_5), getAnswersToQuestion(c, 5), R.drawable.pergunta5));
-        questionList.add(new QuestionModel(6, c.getString(R.string.question_6), getAnswersToQuestion(c, 6), R.drawable.pergunta1));
+        questionList.add(new QuestionModel(6, c.getString(R.string.question_6), getAnswersToQuestion(c, 6), R.drawable.pergunta6));
         questionList.add(new QuestionModel(7, c.getString(R.string.question_7), getAnswersToQuestion(c, 7), R.drawable.pergunta7));
         questionList.add(new QuestionModel(8, c.getString(R.string.question_8), getAnswersToQuestion(c, 8), R.drawable.pergunta8));
         questionList.add(new QuestionModel(9, c.getString(R.string.question_9), getAnswersToQuestion(c, 9), R.drawable.pergunta9));
@@ -107,7 +107,7 @@ public class Utils {
             case 3:
                 answers.add(
                         new AnswerModel(3, c.getResources().getString(R.string.answer_3_question_1),
-                                new RelativeCoordinate(9, 36),
+                                new RelativeCoordinate(1, 36),
                                 new RelativeCoordinate(6, 37), 4));
                 answers.add(
                         new AnswerModel(3, c.getResources().getString(R.string.answer_3_question_2),
