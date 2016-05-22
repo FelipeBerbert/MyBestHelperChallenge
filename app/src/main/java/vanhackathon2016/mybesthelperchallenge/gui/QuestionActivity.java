@@ -2,6 +2,7 @@ package vanhackathon2016.mybesthelperchallenge.gui;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
@@ -114,6 +115,11 @@ public class QuestionActivity extends AppCompatActivity {
 
     private void callNextQuestion() { // Apagar botao next, apagar etiqueta da resposta, reposicionar botoes
         questionProgress++;
+
+        if (questionProgress >10){
+            Intent intent = new Intent(this, ResultActivity_.class);
+            startActivity(intent);
+        }
 
 
         if (Utils.isKitkat()) {

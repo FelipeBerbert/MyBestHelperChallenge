@@ -38,6 +38,8 @@ public class ResultActivity extends AppCompatActivity {
         tvResult = (TextView) coordinator.findViewById(R.id.tv_result);
         btContinue = (Button) coordinator.findViewById(R.id.bt_continue);
 
+        result = 1 + (int)(Math.random() * 4);
+
         switch (result) {
             case 1:
                 tvResult.setText("Happiest Helper");
