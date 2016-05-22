@@ -1,7 +1,13 @@
 package vanhackathon2016.mybesthelperchallenge.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.os.Build;
+import android.view.Display;
+import android.view.View;
+
+import org.androidannotations.annotations.EBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +18,35 @@ import vanhackathon2016.mybesthelperchallenge.models.AnswerModel;
 /**
  * Created by Angelo on 21/05/2016.
  */
+@EBean
 public class Utils {
+
+    public int getQuadrantBasedX(View view, int quadrant, int numOfQuadrants){
+        /*Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);*/
+        int size = view.getWidth();
+        quadrant = (quadrant % numOfQuadrants);
+        return (size / numOfQuadrants * quadrant);
+    }
+    public int getQuadrantBasedY(View view, int quadrant, int numOfQuadrants){
+        int size = view.getHeight();
+        quadrant = (quadrant % numOfQuadrants);
+        return (size / numOfQuadrants * quadrant);
+    }
+
+    public int getQuadrantBasedWidth(View view, int numOfQuadrants){
+       /* Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);*/
+        int size = view.getWidth();
+        return size / numOfQuadrants;
+    }
+
+    public int getQuadrantBasedHeight(View view, int numOfQuadrants){
+        int size = view.getHeight();
+        return size / numOfQuadrants;
+    }
 
     public List<AnswerModel> getAnswersToQuestion(Context c, int questionId) {
         ArrayList<AnswerModel> answers = new ArrayList<>();

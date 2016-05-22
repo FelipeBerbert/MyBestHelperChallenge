@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">My Best Helper Challange</string>
 
+    <string name="lb_next">Next</string>
+
     <string name="question_1">What work are you most interested in?</string>
     <string name="question_2">Do you want to work:</string>
     <string name="question_3">Which person are you most like?</string>
@@ -61,5 +63,10 @@
     <string name="answer_10_question_2">I plan long ahead</string>
     <string name="answer_10_question_3">I am never sure</string>
     <string name="answer_10_question_4">I am totally last minute!</string>
+
+    <string name="tag_answer_1">ans1</string>
+    <string name="tag_answer_2">ans2</string>
+    <string name="tag_answer_3">ans3</string>
+    <string name="tag_answer_4">ans4</string>
 
 </resources>

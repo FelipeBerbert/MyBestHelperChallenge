@@ -16,6 +16,15 @@ public class QuestionModel implements Serializable{
 
     private List<AnswerModel> answers;
 
+    private int scene;
+
+    public QuestionModel(int id, String text, List<AnswerModel> answers, int scene) {
+        this.id = id;
+        this.text = text;
+        this.answers = answers;
+        this.scene = scene;
+    }
+
     public int getId() {
         return id;
     }
@@ -40,4 +49,11 @@ public class QuestionModel implements Serializable{
         this.answers = answers;
     }
 
+    public int getScene() {
+        return scene;
+    }
+
+    public void setScene(int scene) {
+        this.scene = scene;
+    }
 }
