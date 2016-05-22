@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorRed"
+    android:soundEffectsEnabled="true"
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
@@ -28,7 +29,6 @@
         android:id="@+id/fl_scene_frame"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/square"
         >
 
         <ImageView
@@ -42,25 +42,25 @@
             android:id="@+id/bt_answer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/square"
+            android:background="@android:color/transparent"
             />
         <Button
             android:id="@+id/bt_answer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/square"
+            android:background="@android:color/transparent"
             />
         <Button
             android:id="@+id/bt_answer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/square"
+            android:background="@android:color/transparent"
             />
         <Button
             android:id="@+id/bt_answer4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/square"
+            android:background="@android:color/transparent"
             />
 
         <Button

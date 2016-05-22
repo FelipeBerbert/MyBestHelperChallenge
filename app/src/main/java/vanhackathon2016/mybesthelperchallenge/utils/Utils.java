@@ -1,6 +1,7 @@
 package vanhackathon2016.mybesthelperchallenge.utils;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.view.View;
@@ -263,8 +264,10 @@ public class Utils {
     }
 
     public void playAudio(Context context) {
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.plim);
-        mediaPlayer.start(); // no need to call prepare(); create() does that for you
+        /*MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.plim);
+        mediaPlayer.start(); // no need to call prepare(); create() does that for you*/
+        AudioManager am = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
+        am.playSoundEffect(AudioManager.FX_KEY_CLICK);
     }
 
 }

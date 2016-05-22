@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.transition.TransitionManager;
 import android.view.Gravity;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
@@ -173,28 +174,28 @@ public class QuestionActivity extends AppCompatActivity {
 
     @Click(R.id.bt_answer1)
     void clickAnswer1() {
-        Toast.makeText(this, "hit! answer 1", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "hit! answer 1", Toast.LENGTH_LONG).show();
         selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(0);
         showResult();
     }
 
     @Click(R.id.bt_answer2)
     void clickAnswer2() {
-        Toast.makeText(this, "hit! answer 2", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "hit! answer 2", Toast.LENGTH_LONG).show();
         selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(1);
         showResult();
     }
 
     @Click(R.id.bt_answer3)
     void clickAnswer3() {
-        Toast.makeText(this, "hit! answer 3", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "hit! answer 3", Toast.LENGTH_LONG).show();
         selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(2);
         showResult();
     }
 
     @Click(R.id.bt_answer4)
     void clickAnswer4() {
-        Toast.makeText(this, "hit! answer 4", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "hit! answer 4", Toast.LENGTH_LONG).show();
         selectedAnswer = questionList.get(questionProgress - 1).getAnswers().get(3);
         showResult();
     }
@@ -202,6 +203,7 @@ public class QuestionActivity extends AppCompatActivity {
     @Click(R.id.bt_next)
     void clickNext() {
         callNextQuestion();
+//        llBody.playSoundEffect(SoundEffectConstants.CLICK);
         utils.playAudio(this);
     }
 
