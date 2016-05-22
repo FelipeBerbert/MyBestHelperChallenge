@@ -20,7 +20,9 @@
         </activity>
 
         <activity android:name="vanhackathon2016.mybesthelperchallenge.gui.WelcomeActivity_"
-            android:screenOrientation="portrait"/>
+            android:theme="@style/NoActionBar"
+            android:screenOrientation="portrait"
+            android:noHistory="true"/>
 
         <activity
             android:name="vanhackathon2016.mybesthelperchallenge.gui.MovingBlocksActivity_"

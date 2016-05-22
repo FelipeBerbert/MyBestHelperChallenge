@@ -9,7 +9,6 @@
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#68B7AB"
         app:indicatorUnselected="#99b7b7b7"
         app:indicatorSelected="#bfb7b7b7" />
 
