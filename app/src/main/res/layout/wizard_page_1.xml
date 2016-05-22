@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.redbooth.WelcomePageLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorRed">
+
+    <TextView
+        android:id="@+id/tv_header_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/header_page_1"
+        app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxTitleBehaviour"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:paddingTop="50dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp"
+        android:textColor="@android:color/white"
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/welcome1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_page_1"
+        app:view_behavior="vanhackathon2016.mybesthelperchallenge.gui.behaviors.ParallaxSubtitleBehaviour"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:paddingBottom="100dp"
+        android:textColor="@android:color/white"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:textSize="16dp"/>
+
+</com.redbooth.WelcomePageLayout>

@@ -13,9 +13,15 @@ public class AnswerModel implements Serializable {
 
     private int idQuestion;
 
-    public AnswerModel(int id, String text) {
+    private RelativeCoordinate relativeCoordinateX;
+
+    private RelativeCoordinate relativeCoordinateY;
+
+    public AnswerModel(int id, String text, RelativeCoordinate relativeCoordinateX, RelativeCoordinate relativeCoordinateY) {
         this.id = id;
         this.text = text;
+        this.relativeCoordinateX = relativeCoordinateX;
+        this.relativeCoordinateY = relativeCoordinateY;
     }
 
     public int getId() {
@@ -42,4 +48,19 @@ public class AnswerModel implements Serializable {
         this.idQuestion = idQuestion;
     }
 
+    public RelativeCoordinate getRelativeCoordinateX() {
+        return relativeCoordinateX;
+    }
+
+    public void setRelativeCoordinateX(RelativeCoordinate relativeCoordinateX) {
+        this.relativeCoordinateX = relativeCoordinateX;
+    }
+
+    public RelativeCoordinate getRelativeCoordinateY() {
+        return relativeCoordinateY;
+    }
+
+    public void setRelativeCoordinateY(RelativeCoordinate relativeCoordinateY) {
+        this.relativeCoordinateY = relativeCoordinateY;
+    }
 }
