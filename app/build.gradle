@@ -52,7 +52,7 @@ dependencies {
     apt "org.androidannotations:androidannotations:$AAVersion"
     compile "org.androidannotations:androidannotations-api:$AAVersion"
 
-    compile 'com.stephentuso:welcome:0.7.1'
+    compile 'com.redbooth:WelcomeCoordinator:1.0.1'
 
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
