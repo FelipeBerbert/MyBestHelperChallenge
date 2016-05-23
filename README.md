@@ -20,6 +20,10 @@ Luan Santana
 
 https://br.linkedin.com/in/luansmm
 
+Pictures:
+[Welcome Screen](i51^pimgpsh_thumbnail_win_distr.jpg)
+
+
 The MIT License (MIT)
 
 Copyright 2016 Angelo Orrico, Felipe Berbert, Luan Santana
