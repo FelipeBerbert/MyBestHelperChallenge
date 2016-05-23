@@ -34,7 +34,8 @@ https://br.linkedin.com/in/luansmm
 ![Signup Screen]
 
 
-
+# Libraries used:
+https://github.com/txusballesteros/welcome-coordinator/
 
 [Welcome Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_1.png
 [Welcome Screen2]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_2.png
