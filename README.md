@@ -49,6 +49,8 @@ https://github.com/txusballesteros/welcome-coordinator/
 [Result Screen4]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_11.png
 [Signup Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_12.png
 
+# License
+
 The MIT License (MIT)
 
 Copyright 2016 Angelo Orrico, Felipe Berbert, Luan Santana
