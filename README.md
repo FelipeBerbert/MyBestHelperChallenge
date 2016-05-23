@@ -21,8 +21,17 @@ Luan Santana
 https://br.linkedin.com/in/luansmm
 
 Pictures:
-[Welcome Screen](i51^pimgpsh_thumbnail_win_distr.jpg)
-
+[Welcome Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_1.png
+[Welcome Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_2.png
+[Question Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_3.png
+[Question Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_4.png
+[Question Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_5.png
+[Question Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_6.png
+[Result Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_7.png
+[Result Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_8.png
+[Result Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_10.png
+[Result Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_11.png
+[Signup Screen]: https://raw.githubusercontent.com/FelipeBerbert/MyBestHelperChallenge/master/IMG_12.png
 
 The MIT License (MIT)
 
